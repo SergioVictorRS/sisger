@@ -11,3 +11,10 @@ Sistema de Gerenciamento de Recursos sendo desenvolvido visando resolver demanda
 - Área administrativa
 - Mapa permitindo visualizar Grupos de Trabalho
 
+# Time
+Gabriel Oliveira
+Lucas Felix
+Samuel Ferreira
+Sérgio Victor
+
+
