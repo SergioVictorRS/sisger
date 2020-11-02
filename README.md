@@ -1,20 +1,28 @@
-# SISGER
-Sistema de Gerenciamento de Recursos sendo desenvolvido visando resolver demandas da ONG Instituto Internacional Despertando Vocações. O projeto foi elaborado em conjunto com a matéria de Engenharia de Software do Centro de Informática da Universidade Federal de Pernambuco (UFPE).
+# Adonis API application
 
-# MVP
-## Arquitetura e Tecnologias
-- Sistema Web
-- Backend com Adonis
-- Front-end com Reactjs
+This is the boilerplate for creating an API server in AdonisJs, it comes pre-configured with.
 
-## Regras de Negócio
-- Área administrativa
-- Mapa permitindo visualizar Grupos de Trabalho
+1. Bodyparser
+2. Authentication
+3. CORS
+4. Lucid ORM
+5. Migrations and seeds
 
-# Time
-Gabriel Oliveira
-Lucas Felix
-Samuel Ferreira
-Sérgio Victor
+## Setup
+
+Use the adonis command to install the blueprint
+
+```bash
+adonis new yardstick --api-only
+```
+
+or manually clone the repo and then run `npm install`.
 
 
+### Migrations
+
+Run the following command to run startup migrations.
+
+```js
+adonis migration:run
+```
