@@ -1,0 +1,45 @@
+.main{
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.content{
+  color: white;
+  background-color: crimson;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 8;
+}
+
+.centered{
+  max-width: 400px;
+}
+
+.content .title{
+  font-weight: bold;
+  font-size: 18px;
+}
+
+
+.content .description{
+  font-size: 60px;
+}
+
+.form{
+  display: flex;
+  flex: 4;
+  background-color: white;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.form .title{
+  font-weight: bold;
+  font-size: 18px;
+}
