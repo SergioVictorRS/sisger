@@ -3,15 +3,37 @@
 const User = use('App/Models/User')
 
 class UserController {
-
+ 
     async login ({ auth, request }) {
         const { email, password } = request.all()
         return await auth.attempt(email, password)
     }
+// esse logout funciona usando post no insomnia e colocando o token como atributo
+    async logout ({request, response, auth}){
+        
+        const refreshToken = request.input('refreshToken');
 
-    async logout ({auth}){
-        return await auth.logout()
-    }
+        await auth
+          .authenticator('jwt')
+          .revokeTokens([refreshToken], true)
+
+      	return response.send({status : 200, "message" : 'success'})
+  	}
+  	
+
+// Requisições do tipo GET
+//axios.get('https://api.github.com/users/' + username)
+  //.then(function(response){
+    //console.log(response.data); // ex.: { user: 'Your User'}
+    //console.log(response.status); // ex.: 200
+ // });  
+
+// Requisições POST, note há um parâmetro extra indicando os parâmetros da requisição
+//axios.post('/save', { firstName: 'Marlon', lastName: 'Bernardes' })
+  //.then(function(response){
+   // console.log('salvo com sucesso')
+  //}); ''
+//end added
 
     // creating and saving a new user (sign-up)
     async store ({ auth, request, response }) {
@@ -41,6 +63,7 @@ class UserController {
 
             // if user doesn't exist, proceeds with saving him in DB
             const user = await User.create(data)
+            console.log(user)
             
             if(user){
                 return await auth.attempt(
